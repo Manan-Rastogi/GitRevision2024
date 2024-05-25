@@ -1,5 +1,5 @@
 # Git Notes | Exaplained By ChatGpt
-
+---
 ## Git Commands and Concepts
 
 ### 1. Checking Git Version
@@ -9,7 +9,7 @@
   ```bash
   git --version
   ```
-
+---
 ### 2. Checking Repository Status
 
 - **Command:** `git status`
@@ -17,7 +17,7 @@
   ```bash
   git status
   ```
-
+---
 ### 3. Initializing a Repository
 
 - **Command:** `git init`
@@ -25,17 +25,17 @@
   ```bash
   git init
   ```
-
+---
 ### 4. The Hidden .git Folder
 
 - **Explanation:** When you run `git init`, Git creates a hidden folder named `.git` inside your project directory. This folder contains all the configuration files and data necessary for version control.
   - **Example:** `.git` is like the brain of your Git repository; it stores all the history and information about your commits and branches.
-
+---
 ### 5. Commits: Like Checkpoints
 
 - **Explanation:** A commit in Git is like saving a game. Each commit records a snapshot of your project at a specific point in time. If something goes wrong, you can always go back to a previous commit, just like restarting from the last checkpoint in a game.
   - **Example:** If you save your game at level 5, you can always go back to level 5 if you mess up at level 6.
-
+---
 ### 6. Basic Workflow in Git
 
 - **Workflow Overview:**
@@ -69,7 +69,7 @@
     4. **Remote Repository:** `git push origin main`
 
 
-
+---
 ### 7. Viewing the Commit Log
 
 - **Command:** `git log`
@@ -77,7 +77,7 @@
   ```bash
   git log
   ```
-
+---
 ### 8. Viewing a Single Commit
 
 - **Command:** `git log -1`
@@ -85,7 +85,7 @@
   ```bash
   git log -1
   ```
-
+---
 ### 9. Viewing a Simplified Commit Log
 
 - **Command:** `git log --oneline`
@@ -93,7 +93,7 @@
   ```bash
   git log --oneline
   ```
-
+---
 ## Atomic Commits
 
 ### 10. Atomic Commits
@@ -113,7 +113,7 @@
   git add bugfix_file.py
   git commit -m "Fix bug Y"
   ```
-
+---
 ### 11. Setting Username and Email
 
 - **Command:** `git config --global user.name "Your Name"`
@@ -127,7 +127,7 @@
   ```bash
   git config --global user.email "you@example.com"
   ```
-
+---
 ### 12. Setting Default Text Editor
 
 - **Command:** `git config --global core.editor "code --wait"`
@@ -135,7 +135,7 @@
   ```bash
   git config --global core.editor "code --wait"
   ```
-
+---
 ## Git Ignore and Configuration Files
 
 ### 13. Using .gitignore
@@ -152,12 +152,12 @@
   # Ignore all files in the temp directory
   temp/
   ```
-
+---
 ### 14. .gitconfig File
 
 - **Explanation:** The `.gitconfig` file in your root directory (or home directory) stores global Git configuration settings. These settings apply to all repositories on your machine unless overridden by a repository-specific configuration.
   - **Location:** Typically found at `~/.gitconfig` on Unix systems and `C:\Users\YourName\.gitconfig` on Windows.
-
+---
 ## Commit Details
 
 ### 15. Commit Behind the Scenes
@@ -182,7 +182,7 @@
     | Message: "@nd commit"  |
     +------------------------+
     ```
-
+---
 ### 16. Viewing All Commits
 
 - **Explanation:** All commit messages and details are stored in the `.git` directory within your repository. Specifically, you can see all the commit objects in the `.git/objects` directory, but a more user-friendly way is to use `git log` or look into the `.git/COMMIT_EDITMSG` file for the most recent commit message.
@@ -193,18 +193,18 @@
     ```
 
 
-
+---
 ### 17. What's HEAD?
 
 - **Explanation:** In Git, `HEAD` is a pointer that refers to the current branch reference, typically the latest commit in your working directory. When you make a commit, `HEAD` moves to the new commit.
   - **Example:** If you're on the `master` branch, `HEAD` points to the latest commit in `master`.
-
+---
 ## Working with Branches
 
 ### 18. Git Branches (Like Alternate Timelines)
 
 - **Explanation:** Branches in Git allow you to diverge from the main line of development and work on different features or fixes in parallel. Think of branches as alternate timelines in a project where changes can happen independently.
-
+---
 ### 19. Listing Branches
 
 - **Command:** `git branch`
@@ -221,7 +221,7 @@
 
 - **File System Path:** `.git/refs/heads`
 - **Explanation:** This directory contains references to all local branches.
-
+---
 ### 20. Creating and Switching Branches
 
 - **Command:** `git branch {branch-name}`
@@ -251,13 +251,13 @@
   ```bash
   git branch -d new-feature
   ```
-
+---
 ### 21. Checkout vs Switch
 
 - **Explanation:** `git checkout` and `git switch` are both used to switch branches, but `git switch` is a newer and simpler command designed specifically for switching branches. `git checkout` is more versatile but also more complex because it can be used for other purposes, like checking out specific files or commits.
   - **Checkout:** Versatile, used for switching branches, files, and commits.
   - **Switch:** Simplified, used only for switching branches.
-  
+---
 ### Important Tips
 
 - **Always commit before checking out new branches:** This ensures your work is saved before switching branches.
@@ -271,7 +271,7 @@
   ```bash
   cat .git/HEAD
   ```
-
+---
 ## Merging Branches
 
 ### 22. Fast Forward Merge
@@ -280,14 +280,14 @@
   ```bash
   git merge feature-branch
   ```
-
+---
 ### 23. Not Fast Forward Merge
 
 - **Explanation:** When the branches have diverged, Git performs a three-way merge, creating a new commit that combines changes from both branches.
   ```bash
   git merge feature-branch
   ```
-
+---
 ### 24. Handling Conflicts
 
 - **Explanation:** Merge conflicts occur when changes in the two branches conflict and Git cannot automatically resolve them. Using a code editor like Visual Studio Code with merge support can help you see and resolve conflicts more easily.
@@ -303,3 +303,4 @@
   ====
   New branch's content
   >>>> newBranch
+---
