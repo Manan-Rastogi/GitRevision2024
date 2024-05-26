@@ -304,3 +304,120 @@
   New branch's content
   >>>> newBranch
 ---
+
+
+## Viewing Differences
+
+### 25. git diff
+
+- **Command:** `git diff`
+- **Explanation:** Shows the changes between your working directory and the staging area. It helps you see what changes are being tracked by Git.
+  ```bash
+  git diff
+  ```
+---
+### 26. git diff --staged
+
+- **Command:** `git diff --staged`
+- **Explanation:** Shows the changes between the staging area and the last commit. It helps you see what changes will be included in the next commit.
+  ```bash
+  git diff --staged
+  ```
+
+- **Note:** The `--` and `++` symbols are not for adding or deleting code. They are just symbols indicating changes between the past and the current version of the file.
+  ```plaintext
+  - line removed
+  + line added
+  ```
+---
+### 27. git diff commit1..commit2
+
+- **Command:** `git diff commit1..commit2`
+- **Explanation:** Shows the differences between two specific commits. Replace `commit1` and `commit2` with the actual commit hashes.
+  ```bash
+  git diff abc123..def456
+  ```
+---
+### 28. git diff branchOne..branchTwo
+
+- **Command:** `git diff branchOne..branchTwo`
+- **Explanation:** Shows the differences between two branches. Replace `branchOne` and `branchTwo` with the actual branch names.
+  ```bash
+  git diff feature-branch..main
+  ```
+---
+## Stashing Changes
+
+### 29. git stash
+
+- **Explanation:** Stashing is like placing your code on a shelf where you can keep it in reserve. It's useful when you have conflicting changes and need to switch branches without committing.
+  - **Command:** `git stash`
+  - **Explanation:** Saves your uncommitted changes and cleans your working directory.
+    ```bash
+    git stash
+    ```
+---
+### 30. git stash pop
+
+- **Command:** `git stash pop`
+- **Explanation:** Applies the most recent stash and removes it from the stash list.
+  ```bash
+  git stash pop
+  ```
+---
+### 31. git stash apply
+
+- **Command:** `git stash apply`
+- **Explanation:** Applies the most recent stash without removing it from the stash list.
+  ```bash
+  git stash apply
+  ```
+
+- **Command:** `git stash apply stash@{0}`
+- **Explanation:** Applies a specific stash from the stash list.
+  ```bash
+  git stash apply stash@{0}
+  ```
+---
+### 32. git stash list
+
+- **Command:** `git stash list`
+- **Explanation:** Lists all stashes that you have saved.
+  ```bash
+  git stash list
+  ```
+---
+## More Commonly Used Commands
+---
+### 33. git checkout hash
+
+- **Command:** `git checkout hash`
+- **Explanation:** Checks out a specific commit hash, detaching `HEAD` and allowing you to create a new branch from that state.
+  ```bash
+  git checkout abc123
+  ```
+---
+### 34. git switch main
+
+- **Command:** `git switch main`
+- **Explanation:** Reattaches `HEAD` to the main branch.
+  ```bash
+  git switch main
+  ```
+---
+### 35. git checkout HEAD~2
+
+- **Command:** `git checkout HEAD~2`
+- **Explanation:** Checks out the state of the repository from two commits prior to the current commit.
+  ```bash
+  git checkout HEAD~2
+  ```
+---
+### 36. git restore {file-name}
+
+- **Command:** `git restore {file-name}`
+- **Explanation:** Restores the specified file to the state it was in at the last commit.
+  ```bash
+  git restore file.txt
+  ```
+---
