@@ -421,3 +421,78 @@
   git restore file.txt
   ```
 ---
+
+
+
+## Rebasing
+
+### 37. Rebase: Rewriting History
+
+- **Explanation:** Rebasing is a way to rewrite commit history. It can be used as an alternative to merging and is often used to clean up a series of commits before integrating them into a main branch.
+
+### 38. Alternative to Merging
+
+- **Explanation:** Instead of creating a merge commit, rebasing moves or combines a sequence of commits to a new base commit. This results in a linear project history.
+  ```plaintext
+    Before Rebase:        After Rebase:
+    main                  main
+    |                     |
+    A---B---C             A---B---C---D'---E'
+          \               
+          D---E             
+
+  ```
+
+### 39. Cleanup Tool
+
+- **Explanation:** Rebasing can be used to clean up commits before integrating them into the main branch. It allows you to edit, combine, or remove commits.
+  ```bash
+  # Interactive rebase to clean up commits
+  git rebase -i HEAD~3
+  ```
+
+### 40. Caution with Rebasing
+
+- **Important:** Never run `git rebase` from the `main` or `master` branch. Always run it from a side branch to avoid rewriting the published commit history, which can cause problems for collaborators.
+  ```plaintext
+  # Correct workflow
+  git checkout sidebranch
+  git rebase main
+  ```
+
+### 41. Rebasing onto main or master
+
+- **Command:** `git rebase main` or `git rebase master`
+- **Explanation:** When you are on your side branch and want to incorporate the latest changes from the `main` or `master` branch, you can rebase your side branch onto `main` or `master`. This effectively applies your changes on top of the latest commits from `main` or `master`.
+  ```bash
+  # Switch to your side branch
+  git checkout sidebranch
+
+  # Rebase onto main or master
+  git rebase main
+  # or
+  git rebase master
+  ```
+
+- **Example Workflow:**
+  1. **Ensure you are on your side branch:**
+     ```bash
+     git checkout sidebranch
+     ```
+
+  2. **Rebase your side branch onto `main` or `master`:**
+     ```bash
+     git rebase main
+     # or
+     git rebase master
+     ```
+
+  3. **Resolve any conflicts that arise during the rebase process.**
+     ```bash
+     # Resolve conflicts in your editor
+     git add resolved_file.txt
+     git rebase --continue
+     ```
+
+  4. **Continue the rebase process until it completes.**
+---
